@@ -13,9 +13,17 @@ player = Player()
 car_manager = CarManager()
 scoreboard = Scoreboard()
 
-# Key listener
+# Key listeners
 screen.listen()
 screen.onkey(player.go_up, "Up")
+
+# Function to restart the game
+def restart_game():
+    player.go_to_start()
+    car_manager.reset()
+    scoreboard.reset()
+    screen.update()
+
 
 # Main game loop
 game_is_on = True
